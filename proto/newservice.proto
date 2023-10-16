@@ -1,0 +1,23 @@
+// services.proto
+
+syntax = "proto3";
+
+package AddServicePackage;
+
+service newservice {
+    rpc CreateService(Services) returns (serviceResponse) {};
+}
+
+message Services {
+  string serviceName = 1;
+  string description = 2;
+  int32 categoryId=3;
+  repeated int32 parentId=4;
+}
+
+message serviceResponse{
+  int32 status=1;
+  // string msg=2;
+}
+
+message void {}
